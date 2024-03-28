@@ -76,8 +76,19 @@ void * prevList(List * list) {
     list->current = list->current->prev;
     return list->current->data;
 }
-
+/* Programe la función void pushFront(List * list, void * data), la cual agrega un dato al comienzo de la lista.*/
 void pushFront(List * list, void * data) {
+    Node * nuevoN = createNode(data);
+    if (list->head == NULL){
+        list->head = nuevoN;
+        list->tail = nuevoN;
+    }
+    else{
+        nuevoN->next = list->head;
+        list->head->prev = nuevoN;
+        list->head = nuevoN;
+    }
+  
 }
 
 void pushBack(List * list, void * data) {
