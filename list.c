@@ -57,9 +57,13 @@ void * nextList(List * list) {
     return list->current->data;
 
 }
-
+/*Programe la funcion void * lastList(List * list) retorna el dato del último elemento en la lista y actualiza el current al nodo correspondiente.*/
 void * lastList(List * list) {
-    return NULL;
+    if (list->tail == NULL) {
+        return NULL;
+    }
+    list->current = list->tail;
+    return list->tail->data;
 }
 
 void * prevList(List * list) {
@@ -87,8 +91,11 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
+/*Programe la función void* popCurrent(List * list), la cual elimina el nodo que está en la posición del current de la lista enlazada, y además retorna el dato del nodo eliminado.
+Además el current debe quedar apuntando al nodo siguiente del eliminado.*/
 void * popCurrent(List * list) {
     return NULL;
+    
 }
 
 void cleanList(List * list) {
